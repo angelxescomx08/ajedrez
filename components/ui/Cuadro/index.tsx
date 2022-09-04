@@ -1,14 +1,15 @@
 import { FC } from 'react';
 import styles from './styles.module.css';
 
-interface Props{
-    color: string;
+interface Props {
+  children?: JSX.Element;
+  color: string;
 }
 
-export const Cuadro:FC<Props> = ({color}) => {
+export const Cuadro: FC<Props> = ({ color, children }) => {
   return (
-    <div className={styles.cuadro} style={{backgroundColor: color}}>
-
+    <div className={styles.cuadro} style={{ backgroundColor: color }}>
+      {children}
     </div>
   )
 }
