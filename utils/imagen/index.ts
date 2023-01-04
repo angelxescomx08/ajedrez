@@ -1,15 +1,15 @@
-import alfilBlanca from '../../public/assets/img/alfil-blanca.png';
-import alfilNegra from '../../public/assets/img/alfil-negra.png';
-import caballoBlanca from '../../public/assets/img/caballo-blanca.png';
-import caballoNegra from '../../public/assets/img/caballo-negra.png';
-import damaBlanca from '../../public/assets/img/dama-blanca.png';
-import damaNegra from '../../public/assets/img/dama-negra.png';
-import peonBlanca from '../../public/assets/img/peon-blanca.png';
-import peonNegra from '../../public/assets/img/peon-negra.png';
-import reyBlanca from '../../public/assets/img/rey-blanca.png';
-import reyNegra from '../../public/assets/img/rey-negra.png';
-import torreBlanca from '../../public/assets/img/torre-blanca.png';
-import torreNegra from '../../public/assets/img/torre-negra.png';
+let alfilBlanca = 'assets/img/alfil-blanca.png';
+let alfilNegra = 'assets/img/alfil-negra.png';
+let caballoBlanca = 'assets/img/caballo-blanca.png';
+let caballoNegra = 'assets/img/caballo-negra.png';
+let damaBlanca = 'assets/img/dama-blanca.png';
+let damaNegra = 'assets/img/dama-negra.png';
+let peonBlanca = 'assets/img/peon-blanca.png';
+let peonNegra = 'assets/img/peon-negra.png';
+let reyBlanca = 'assets/img/rey-blanca.png';
+let reyNegra = 'assets/img/rey-negra.png';
+let torreBlanca = 'assets/img/torre-blanca.png';
+let torreNegra = 'assets/img/torre-negra.png';
 
 export const obtenerImagen = (pieza: string) => {
     switch (pieza) {

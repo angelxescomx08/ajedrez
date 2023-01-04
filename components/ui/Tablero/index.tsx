@@ -1,4 +1,5 @@
-import Image from "next/image";
+import {motion} from 'framer-motion'
+
 
 import { Cuadro } from "../Cuadro";
 
@@ -19,7 +20,7 @@ export const Tablero = () => {
                         <Cuadro key={`${filas[i]}${columnas[j]}`}
                             color={(i + j) % 2 === 0 ? '#fff' : '#000'}>
                             {obtenerImagen(pieza) ?
-                                <Image width='100%' height='100%' src={obtenerImagen(pieza)} alt="" />
+                                <motion.img className={styles.img} src={obtenerImagen(pieza)} alt="" />
                                 : <></>}
                         </Cuadro>
                     ))
