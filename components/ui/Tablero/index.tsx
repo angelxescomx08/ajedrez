@@ -1,5 +1,7 @@
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 
+
+import chess from 'chess';
 
 import { Cuadro } from "../Cuadro";
 
@@ -12,18 +14,28 @@ const columnas = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
 
 export const Tablero = () => {
+
+    const gameClient = chess.create();
+    let move, status;
+    status = gameClient.getStatus();
+
+    console.log(status);
+
     return (
         <div className={styles.tablero}>
             {
-                tablero.map((fila, i) => (
-                    fila.map((pieza, j) => (
-                        <Cuadro key={`${filas[i]}${columnas[j]}`}
-                            color={(i + j) % 2 === 0 ? '#fff' : '#000'}>
-                            {obtenerImagen(pieza) ?
-                                <motion.img className={styles.img} src={obtenerImagen(pieza)} alt="" />
-                                : <></>}
-                        </Cuadro>
-                    ))
+                [...status.board.squares].reverse().map((square, i) => (
+                    <Cuadro key={i} color={(i + square.rank ) % 2 === 0 ? '#fff' : '#000'}>
+                        {
+                            square.piece ?
+                                <motion.img
+                                    className={styles.img}
+                                    src={obtenerImagen(square.piece.type, square.piece.side.name)}
+                                    alt=""
+                                />
+                                : <></>
+                        }
+                    </Cuadro>
                 ))
             }
         </div>

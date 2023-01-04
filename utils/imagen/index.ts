@@ -11,33 +11,32 @@ let reyNegra = 'assets/img/rey-negra.png';
 let torreBlanca = 'assets/img/torre-blanca.png';
 let torreNegra = 'assets/img/torre-negra.png';
 
-export const obtenerImagen = (pieza: string) => {
-    switch (pieza) {
-        case 'v':
-            return '';
-        case 'ab':
+export const obtenerImagen = (pieza: string, color: string) => {
+    const clave = `${pieza}-${color}`;
+    switch (clave) {
+        case 'bishop-white':
             return alfilBlanca;
-        case 'an':
+        case 'bishop-black':
             return alfilNegra;
-        case 'cb':
+        case 'knight-white':
             return caballoBlanca;
-        case 'cn':
+        case 'knight-black':
             return caballoNegra;
-        case 'db':
+        case 'queen-white':
             return damaBlanca;
-        case 'dn':
+        case 'queen-black':
             return damaNegra;
-        case 'pb':
+        case 'pawn-white':
             return peonBlanca;
-        case 'pn':
+        case 'pawn-black':
             return peonNegra;
-        case 'rb':
+        case 'king-white':
             return reyBlanca;
-        case 'rn':
+        case 'king-black':
             return reyNegra;
-        case 'tb':
+        case 'rook-white':
             return torreBlanca;
-        case 'tn':
+        case 'rook-black':
             return torreNegra;
         default:
             return '';
