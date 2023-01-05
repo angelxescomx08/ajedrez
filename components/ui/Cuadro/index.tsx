@@ -1,6 +1,7 @@
-import { FC, DragEvent } from 'react';
+import { FC, DragEvent, useContext } from 'react';
 import { motion } from 'framer-motion'
 import styles from './styles.module.css'
+import { DragContext } from '../../../context/Drag/DragContext';
 
 interface Props {
   children?: JSX.Element;
@@ -10,11 +11,15 @@ interface Props {
 
 export const Cuadro: FC<Props> = ({ color, children, id }) => {
 
-  const onDrop = (e:DragEvent<HTMLDivElement>) => {
-    console.log(e)
+  const { piece, setDragging, setPiece } = useContext(DragContext)
+
+  const onDrop = (e: DragEvent<HTMLDivElement>) => {
+    console.log(piece)
+    setPiece('')
+    setDragging(false)
   }
 
-  const onDragOver = (e:DragEvent<HTMLDivElement>) => {
+  const onDragOver = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault()
   }
 

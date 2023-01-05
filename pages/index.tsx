@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Tablero } from '../components/ui'
+import { DragProvider } from '../context'
 
 const Home: NextPage = () => {
   return (
@@ -8,7 +9,9 @@ const Home: NextPage = () => {
       <Head>
         <title>Ajedrez</title>
       </Head>
-      <Tablero/>
+      <DragProvider>
+        <Tablero />
+      </DragProvider>
     </div>
   )
 }
