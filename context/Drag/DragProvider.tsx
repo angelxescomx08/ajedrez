@@ -27,7 +27,7 @@ export const DragProvider: FC<Props> = ({ children }) => {
             ...state,
             //metodos
             setDragging,
-            setPiece
+            setPiece,
         }}>
            {children}
         </DragContext.Provider>

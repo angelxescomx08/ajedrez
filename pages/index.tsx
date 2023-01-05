@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Tablero } from '../components/ui'
-import { DragProvider } from '../context'
+import { ChessProvider, DragProvider } from '../context'
 
 const Home: NextPage = () => {
   return (
@@ -9,9 +9,11 @@ const Home: NextPage = () => {
       <Head>
         <title>Ajedrez</title>
       </Head>
-      <DragProvider>
-        <Tablero />
-      </DragProvider>
+      <ChessProvider>
+        <DragProvider>
+          <Tablero />
+        </DragProvider>
+      </ChessProvider>
     </div>
   )
 }

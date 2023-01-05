@@ -9,18 +9,18 @@ import { Cuadro } from "../Cuadro";
 
 
 import styles from './styles.module.css';
+import { ChessContext } from '../../../context/Chess/ChessContext';
 
-const gameClient = chess.create();
-let move;
-let status = gameClient.getStatus();
 
-console.log(status);
 export const Tablero = () => {
+
+    const { getStatus } = useContext(ChessContext)
     const { setDragging, setPiece } = useContext(DragContext)
+
     return (
         <div className={styles.tablero}>
             {
-                [...status.board.squares].map((square, i) => (
+                getStatus().board.squares.map((square, i) => (
                     <Cuadro
                         id={`${square.file}${square.rank}`}
                         key={i}
