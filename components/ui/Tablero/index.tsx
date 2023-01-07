@@ -29,6 +29,7 @@ export const Tablero = () => {
                         {
                             square.piece ?
                                 <motion.img
+                                    draggable
                                     id={`${square.piece.type}-${square.piece.side.name}`}
                                     onDragCapture={() => {
                                         setDragging(true)
