@@ -1,15 +1,13 @@
 import { useContext } from 'react'
 import { motion } from 'framer-motion'
-import chess from 'chess';
 
-import { DragContext } from '../../../context/Drag/DragContext';
+import { DragContext, ChessContext } from '../../../context';
 import { obtenerImagen } from '../../../utils';
 
 import { Cuadro } from "../Cuadro";
 
 
 import styles from './styles.module.css';
-import { ChessContext } from '../../../context/Chess/ChessContext';
 
 
 export const Tablero = () => {

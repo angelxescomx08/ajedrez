@@ -5,7 +5,7 @@ import { ChessProvider, DragProvider } from '../context'
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className='contenedor-principal'>
       <Head>
         <title>Ajedrez</title>
       </Head>
