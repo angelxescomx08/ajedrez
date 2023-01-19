@@ -1,10 +1,6 @@
 import { useContext } from 'react'
-import { motion } from 'framer-motion'
-
 import { DragContext, ChessContext } from '../../../context';
-import { obtenerImagen } from '../../../utils';
-
-import { Cuadro } from "../Cuadro";
+import { Cuadro, Pieza } from "../";
 
 
 import styles from './styles.module.css';
@@ -26,17 +22,7 @@ export const Tablero = () => {
                     >
                         {
                             square.piece ?
-                                <motion.img
-                                    draggable
-                                    id={`${square.piece.type}-${square.piece.side.name}`}
-                                    onDragCapture={() => {
-                                        setDragging(true)
-                                        setPiece(`${square.piece.type}-${square.piece.side.name}`)
-                                    }}
-                                    className={styles.img}
-                                    src={obtenerImagen(square.piece.type, square.piece.side.name)}
-                                    alt=""
-                                />
+                                <Pieza square={square} />
                                 : <></>
                         }
                     </Cuadro>
